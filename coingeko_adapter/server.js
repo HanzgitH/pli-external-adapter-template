@@ -1,12 +1,18 @@
-{
-  "name": "plugin-coingeko-adapter",
-  "version": "1.0.0",
-  "license": "MIT",
-  "dependencies": {
-    "@goplugin/external-adapter": "^1.0.1",
-    "body-parser": "^1.18.3",
-    "dotenv": "^10.0.0",
-    "express": "^4.16.3",
-    "request": "^2.87.0"
-  }
-}
+const createRequest = require('./index').createRequest
+
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+const port = process.env.EA_PORT || 5002
+
+app.use(bodyParser.json())
+
+app.post('/', (req, res) => {
+  console.log("request value is",req.body)
+  createRequest(req.body, (status, result) => {
+    console.log('Result: ', result)
+    res.status(status).json(result)
+  })
+})
+
+app.listen(port, () => console.log(`Listening on port ${port}!`))
