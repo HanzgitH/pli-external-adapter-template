@@ -56,7 +56,7 @@ Define the bridge by loggin into your node and accessing bridges tab.
 Click new bridge add the information below:
 
     "name": coingeko
-    "url": http://localhost:5003
+    "url": http://localhost:5002
     "confirmations": 0
     "minimumContractPayment": 0
     
