@@ -12,7 +12,7 @@
     12
     13  const createRequest = (input, callback) => {
     14
-    15    const url = `https://api1.binance.com/api/v3/ticker/price?symbol=${input.data.fromsystem}`
+    15    const url = `https://api.coingecko.com/api/v3/simple/price?ids=${input.data.fromsystem}&vs_currencies=${input.data.tosystem}`
     16
     17    const config = {
     18      url
