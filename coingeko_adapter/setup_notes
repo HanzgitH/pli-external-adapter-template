@@ -41,9 +41,9 @@ Click deploy.
 
 Get files from github:
 
-    git clone https://github.com/HanzgitH/pli-external-adapter-template/tree/main/coingeko_adapter
-
-Install npm:
+    git clone https://github.com/HanzgitH/pli-external-adapter-template/
+    
+    cd coingeko_adapter
 
     npm install
 
