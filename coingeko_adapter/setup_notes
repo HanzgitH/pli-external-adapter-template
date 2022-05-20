@@ -1,18 +1,18 @@
 Guide that has been adapted to work with the coingeko api:
 
-https://docs.goplugin.co/use-cases/crypto-compare-pricing-index
+    https://docs.goplugin.co/use-cases/crypto-compare-pricing-index
 
 To complete this adapter you will need a new oracle contract address (OCA) on remix:
-
-  https://remix.xinfin.network/
+ 
+    https://remix.xinfin.network/
 
 Create new contract name:
 
-oracle.sol
+    oracle.sol
 
 Contents:
 
-`pragma solidity 0.4.24;
+    pragma solidity 0.4.24;
 import "@goplugin/contracts/src/v0.4/Oracle.sol";`
 
 On the Compile tab, click the Compile button for Oracle.sol.
