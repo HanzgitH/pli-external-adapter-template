@@ -41,7 +41,7 @@ Click deploy.
 
 Get files from github:
 
-    git clone https://github.com/HanzgitH/pli-external-adapter-template/
+    git clone https://github.com/HanzgitH/pli-external-adapter-template.git && cd /
     
     cd coingeko_adapter
 
