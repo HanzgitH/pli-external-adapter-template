@@ -3,61 +3,72 @@ Guide that has been adapted to work with the coingeko api:
     https://docs.goplugin.co/use-cases/crypto-compare-pricing-index
 
 To complete this adapter you will need a new oracle contract address (OCA) on remix:
- 
+
     https://remix.xinfin.network/
 
 Create new contract name:
 
     oracle.sol
 
-Contents:
+Add contents:
 
-    pragma solidity 0.4.24;
+pragma solidity 0.4.24;
 import "@goplugin/contracts/src/v0.4/Oracle.sol";`
 
 On the Compile tab, click the Compile button for Oracle.sol.
 
 On the Deploy and Run tab, configure the following settings:
 
-Select "Injected Web3" as your Environment. The Javascript VM environment cannot access your oracle node.
+    Select "Injected Web3" as your Environment. The Javascript VM environment cannot access your oracle node.
 
-Select the "Oracle" contract from the Contract menu.
+    Select the "Oracle" contract from the Contract menu.
 
-Copy the PLI token contract address for the network:
+    Copy the PLI token contract address for the network:
 
-Mainnet:
-`0xff7412ea7c8445c46a8254dfb557ac1e48094391`
+    Mainnet:
+        0xff7412ea7c8445c46a8254dfb557ac1e48094391
 
-Apothem(testnet):
-`0x33f4212b027e22af7e6ba21fc572843c0d701cd1`
+    Apothem(testnet):
+        0x33f4212b027e22af7e6ba21fc572843c0d701cd1
 
 Paste it into the address_link field next to the Deploy button.
 
-Now login to you node and copy the node regular address into the fufillemt area, replacing node address with your own:
+Now login to you node and copy the node regular address into the fufillment area on your OCAm replacing node address with your own:
 
-`"node_address",true`
+    "node_address",true`
 
 Click deploy.
 
 Get files from github:
 
-`git clone https://github.com/HanzgitH/pli-external-adapter-template/tree/main/coingeko_adapter`
+    git clone https://github.com/HanzgitH/pli-external-adapter-template/tree/main/coingeko_adapter
 
 Install npm:
 
-`npm install`
+    npm install
 
 Start server to work with pm2:
 
-`pm2 start server.js`
+    pm2 start server.js
 
 Define the bridge by loggin into your node and accessing bridges tab.
 
 Click new bridge add the information below:
 
-`"name": coingeko
-"url": http://localhost:5003
-"confirmations": 0
-"minimumContractPayment": 0`
+    "name": coingeko
+    "url": http://localhost:5003
+    "confirmations": 0
+    "minimumContractPayment": 0
+    
+Return to remix and run consumer.sol, fund the address with 0.1 PLI.
+
+Once the funding is completed form a string with respective details you stored:
+
+"oracle_address","job_spec_id","SRC_Token"."DEST_Token"
+
+(eg: "0xaa9F8EF6e0dcf6C3F503075F38f13D10a8C5b1E9","a6c6ae51-4950-40a0-94ba-e52365e71ce1","plugin","USDT") and click on requestData. 
+
+CoinGeko requests are expanded, for example PLI would be plugin, when requesting data be consious of query terminology.
+
 
 
